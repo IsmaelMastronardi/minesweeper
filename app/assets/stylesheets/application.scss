@@ -1,2 +1,23 @@
 @import "bootstrap";
 
+
+.gameContainer {
+  display: flex;
+  justify-content:center;
+  overflow-x: auto;
+}
+
+.gameTable {
+  display: flex;
+}
+
+.boardRow {
+
+}
+
+.boardSquare {
+}
+
+.boardSquare > span {
+  font-size: 3rem;
+}
