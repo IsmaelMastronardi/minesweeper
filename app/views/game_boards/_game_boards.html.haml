@@ -8,6 +8,7 @@
       %th Height
       %th Bomb amount
       %th Email
+      %th Created At
 
 
   %tbody
@@ -18,4 +19,4 @@
         %td= game_board.height
         %td= game_board.bomb_amount
         %td= game_board.email
-
+        %td= game_board.created_at.strftime("%Y-%m-%d")

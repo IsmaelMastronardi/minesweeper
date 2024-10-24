@@ -1,32 +1,12 @@
 %h1 Listing game_boards
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Width
-      %th Height
-      %th Bomb amount
-      %th Email
-      %th Board
-      %th
-      %th
-      %th
+= render 'game_boards/game_boards',  game_boards: @game_boards
 
-  %tbody
-    - @game_boards.each do |game_board|
-      %tr
-        %td= game_board.name
-        %td= game_board.width
-        %td= game_board.height
-        %td= game_board.bomb_amount
-        %td= game_board.email
-        %td= game_board.board
-        %td= link_to 'Show', game_board
-        %td= link_to 'Edit', edit_game_board_path(game_board)
-        %td= link_to 'Destroy', game_board, method: :delete, data: { confirm: 'Are you sure?' }
+= link_to 'New Game board', new_game_board_path
+
+= link_to 'Back to Home page', root_path
 
 %br
 
 
-= link_to 'New Game board', new_game_board_path
+

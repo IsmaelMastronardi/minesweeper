@@ -1,3 +1,7 @@
 %h1 Home
 
-= render 'game_boards/last_10_board',  game_boards: @game_boards
+= render 'form'
+
+= render 'game_boards/game_boards',  game_boards: @game_boards
+
+= link_to 'See All Boards', game_boards_path

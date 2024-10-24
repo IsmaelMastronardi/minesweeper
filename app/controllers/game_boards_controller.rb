@@ -3,6 +3,7 @@ class GameBoardsController < ApplicationController
 
   def home
     @game_boards = GameBoard.order(created_at: :desc).limit(10)
+    @game_board = GameBoard.new
   end
 
   # GET /game_boards or /game_boards.json
