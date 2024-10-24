@@ -30,14 +30,15 @@ class GameBoardsController < ApplicationController
     generated_board = generateBoard(@game_board)
 
     if generated_board == 'Too many bombs'
-      flash[:alert] = 'Too many bombs'
-      render :new
+      flash[:alert] = 'Too many bombs for the amount of squares selected'
+      redirect_to root_path
     else
       @game_board.board = generated_board
       if @game_board.save
-        redirect_to @game_board, notice: 'Game board was successfully created'
+        redirect_to @game_board
       else
-        render :new
+        flash[:alert] = @game_board.errors.full_messages.to_sentence
+        redirect_to root_path
       end
     end
   end
