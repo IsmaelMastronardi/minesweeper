@@ -1,10 +1,11 @@
-class CreateBoards < ActiveRecord::Migration[7.1]
+class CreateGameBoards < ActiveRecord::Migration[7.1]
   def change
-    create_table :boards do |t|
+    create_table :game_boards do |t|
+      t.string :name
       t.integer :width
       t.integer :height
+      t.integer :bomb_amount
       t.string :email
-      t.integer :number_of_bombs
       t.jsonb :board
 
       t.timestamps

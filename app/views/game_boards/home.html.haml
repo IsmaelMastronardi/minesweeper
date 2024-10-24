@@ -1,0 +1,7 @@
+%h1 Home
+
+= render 'form'
+
+= render 'game_boards/game_boards',  game_boards: @game_boards
+
+= link_to 'See All Boards', game_boards_path
