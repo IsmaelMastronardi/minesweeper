@@ -3,7 +3,7 @@
 
 .gameContainer {
   display: flex;
-  justify-content:center;
+  justify-content: safe center;
   overflow-x: auto;
 }
 
@@ -16,10 +16,16 @@
 }
 
 .boardSquare {
+  min-width: 3rem;
+  text-align: center;
 }
 
 .boardSquare > span {
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.borderedSquare {
+  border: 1px solid black;
 }
 
 .navigation {
@@ -37,3 +43,37 @@
 em {
   color: #0d6efd !important;
 }
+
+
+.bomb-1 {
+  color: blue;
+}
+
+.bomb-2 {
+  color: green;
+}
+
+.bomb-3 {
+  color: lightgreen;
+}
+
+.bomb-4 {
+  color: #cfcf89;
+}
+
+.bomb-5 {
+  color: orange;
+}
+
+.bomb-6 {
+  color: red;
+}
+
+.bomb-7 {
+  color: darkred;
+}
+
+.bomb-8 {
+  color: purple;
+}
+
