@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  width: 1
+  height: 1
+  email: MyString
+  number_of_bombs: 1
+  board: 
+
+two:
+  width: 1
+  height: 1
+  email: MyString
+  number_of_bombs: 1
+  board: 
