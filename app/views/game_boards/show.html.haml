@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @game_board.name
+%p
+  %b Width:
+  = @game_board.width
+%p
+  %b Height:
+  = @game_board.height
+%p
+  %b Bomb amount:
+  = @game_board.bomb_amount
+%p
+  %b Email:
+  = @game_board.email
+%p
+  %b Board:
+  = @game_board.board
+
+= link_to 'Edit', edit_game_board_path(@game_board)
+\|
+= link_to 'Back', game_boards_path
