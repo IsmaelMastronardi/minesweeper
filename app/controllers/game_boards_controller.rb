@@ -88,12 +88,12 @@ class GameBoardsController < ApplicationController
       board = []
     
       (height * width).times do
-        board.push('o')
+        board.push({ bomb: false, revealed: false })
       end
     
       bomb_locations = [*0..((width * height) - 1)].sample(bomb_amount)
       bomb_locations.each do |loc|
-        board[loc] = 'X'
+        board[loc]['bomb'] = true
       end
     
       board  = board.each_slice(height).to_a
