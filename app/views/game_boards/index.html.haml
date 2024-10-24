@@ -16,7 +16,7 @@
   %tbody
     - @game_boards.each do |game_board|
       %tr
-        %td= game_word.name
+        %td= game_board.name
         %td= game_board.width
         %td= game_board.height
         %td= game_board.bomb_amount
