@@ -1,7 +1,10 @@
-%h1 Home
+%h1.text-center.display-3.fw-bold Minesweeper Home
 
+%h2.text-center.display-6.pt-5 Create a new Minesweeper Board
 = render 'form'
 
+%h2.text-center.display-6.py-1 10 Latests Boards
 = render 'game_boards/game_boards',  game_boards: @game_boards
 
-= link_to 'See All Boards', game_boards_path
+%div.container
+  = link_to 'See All Boards', game_boards_path, class: 'btn btn-primary'

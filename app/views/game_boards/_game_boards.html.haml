@@ -1,22 +1,20 @@
-%h1 Listing last 10 Game Boards
-
-%table
-  %thead
-    %tr
-      %th Name
-      %th Width
-      %th Height
-      %th Bomb amount
-      %th Email
-      %th Created At
-
-
-  %tbody
-    - game_boards.each do |game_board|
+%div.container
+  %table.table.table-bordered.table-dark.table-hover
+    %thead
       %tr
-        %td= link_to game_board.name, game_board
-        %td= game_board.width
-        %td= game_board.height
-        %td= game_board.bomb_amount
-        %td= game_board.email
-        %td= game_board.created_at.strftime("%Y-%m-%d")
+        %th Name
+        %th Width
+        %th Height
+        %th Bomb amount
+        %th Email
+        %th Created At
+
+    %tbody
+      - game_boards.each do |game_board|
+        %tr
+          %td= link_to game_board.name, game_board, class: 'text-decoration-none'
+          %td= game_board.width
+          %td= game_board.height
+          %td= game_board.bomb_amount
+          %td= game_board.email
+          %td= game_board.created_at.strftime("%Y-%m-%d")

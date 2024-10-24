@@ -1,25 +1,31 @@
-= form_for @game_board do |f|
+= form_for @game_board, html: { class: "container" } do |f|
   - if @game_board.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@game_board.errors.count, "error")} prohibited this game_board from being saved:"
+      %h2.text-danger= "#{pluralize(@game_board.errors.count, 'error')} prohibited this game_board from being saved:"
       %ul
         - @game_board.errors.full_messages.each do |message|
-          %li= message
+          %li.text-danger= message
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :width
-    = f.number_field :width
-  .field
-    = f.label :height
-    = f.number_field :height
-  .field
-    = f.label :bomb_amount
-    = f.number_field :bomb_amount
-  .field
-    = f.label :email
-    = f.text_field :email
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :name, class: "form-label"
+    = f.text_field :name, class: "form-control"
+
+  .form-group
+    = f.label :width, class: "form-label"
+    = f.number_field :width, class: "form-control"
+
+  .form-group
+    = f.label :height, class: "form-label"
+    = f.number_field :height, class: "form-control"
+
+  .form-group
+    = f.label :bomb_amount, class: "form-label"
+    = f.number_field :bomb_amount, class: "form-control"
+
+  .form-group
+    = f.label :email, class: "form-label"
+    = f.text_field :email, class: "form-control"
+
+  .form-group.py-3
+    = f.submit 'Save', class: "btn btn-primary"
+
