@@ -23,11 +23,13 @@
       - @game_board.board.each do |row|
         %div.boardRow
           - row.each do |cell|
-            %div.boardSquare
+            %div.boardSquare.borderedSquare
               - if cell["bomb"]
                 %span 💣
-              - else
-                %span ⬜
+              - else cell['attached_bombs'] > 0
+                %span{ class: "bomb-#{cell['attached_bombs']}" }= cell['attached_bombs']
+              -# - else
+              -#   %span ⬜
 
 
   = link_to 'Back to Home page', root_path, class: 'btn btn-primary mt-3'
