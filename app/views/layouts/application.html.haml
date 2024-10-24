@@ -10,3 +10,7 @@
     = javascript_importmap_tags
   %body
     = yield
+
+    %script{ type: "module" }
+      :plain
+        import "bootstrap"
