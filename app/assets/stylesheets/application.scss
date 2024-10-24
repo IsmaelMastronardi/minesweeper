@@ -21,3 +21,19 @@
 .boardSquare > span {
   font-size: 3rem;
 }
+
+.navigation {
+  padding-bottom: 1rem;
+}
+
+.navigation > span,
+.navigation > em,
+.navigation > a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+em {
+  color: #0d6efd !important;
+}
