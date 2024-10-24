@@ -1,24 +1,33 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @game_board.name
-%p
-  %b Width:
-  = @game_board.width
-%p
-  %b Height:
-  = @game_board.height
-%p
-  %b Bomb amount:
-  = @game_board.bomb_amount
-%p
-  %b Email:
-  = @game_board.email
-%p
+%h1.text-center.display-3.fw-bold
   %b Board:
-  = @game_board.board
+  %span= @game_board.name
 
--# = link_to 'Edit', edit_game_board_path(@game_board)
+%div.container-xxl
+  %p
+    %b Number of Columns:
+    = @game_board.width
+  %p
+    %b Number of Rows:
+    = @game_board.height
+  %p
+    %b Number of Bombs:
+    = @game_board.bomb_amount
+  %p
+    %b Email:
+    = @game_board.email
 
-= link_to 'Back to Home page', root_path
+  %div.gameContainer
+    %div.gameTable
+      - @game_board.board.each do |row|
+        %div.boardRow
+          - row.each do |cell|
+            %div.boardSquare
+              - if cell["bomb"]
+                %span 💣
+              - else
+                %span ⬜
+
+
+  = link_to 'Back to Home page', root_path, class: 'btn btn-primary mt-3'

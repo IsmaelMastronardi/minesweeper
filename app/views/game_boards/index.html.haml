@@ -1,10 +1,11 @@
-%h1 Listing game_boards
+%h1.text-center.display-3.fw-bold.pb-4 All Minesweeper Boards
 
 = render 'game_boards/game_boards',  game_boards: @game_boards
 
-= link_to 'New Game board', new_game_board_path
+%div.container
+  = link_to 'New Game board', new_game_board_path, class: 'btn btn-primary'
 
-= link_to 'Back to Home page', root_path
+  = link_to 'Back to Home page', root_path, class: 'btn btn-primary'
 
 %br
 

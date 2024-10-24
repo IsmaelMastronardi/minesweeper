@@ -1,6 +1,7 @@
-%h1 New game_board
+%h1.text-center.display-3.fw-bold.pb-4 New game_board
 
 = render 'form'
 
-= link_to 'Back to Home page', root_path
+%div.container
+  = link_to 'Back to Home page', root_path, class: 'btn btn-primary'
 
