@@ -4,12 +4,9 @@ import "controllers"
 
 document.querySelectorAll('.boardSquare').forEach(square => {
   square.addEventListener('click', function() {
-    console.log('aaa')
     const isRevealed = this.dataset.revealed === 'true';
-
     if (!isRevealed) {
       this.dataset.revealed = 'true';
-      console.log(this.dataset.bomb)
       if(this.dataset.bomb === 'true'){
         this.innerHTML = '<span>💣</span>';
       }
