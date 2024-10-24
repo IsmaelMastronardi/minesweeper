@@ -1,6 +1,10 @@
 class GameBoardsController < ApplicationController
   before_action :set_game_board, only: %i[ show edit update destroy ]
 
+  def home
+    @game_boards = GameBoard.order(created_at: :desc).limit(10)
+  end
+
   # GET /game_boards or /game_boards.json
   def index
     @game_boards = GameBoard.all
