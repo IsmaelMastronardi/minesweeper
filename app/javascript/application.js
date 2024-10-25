@@ -39,7 +39,6 @@ squares.forEach(square => {
 });
 
 resetBtn.addEventListener('click', function(){
-  console.log('dsa')
   squares.forEach(square => {
     square.dataset.revealed = 'false'
     square.innerHTML = '<span>⬜</span>'
@@ -50,7 +49,6 @@ resetBtn.addEventListener('click', function(){
 });
 
 showBtn.addEventListener('click', function(){
-  console.log('dsa')
   squares.forEach(square => {
     square.dataset.revealed = 'true'
     changeDisplayedValue(square)
