@@ -9,5 +9,3 @@ bundle exec rails assets:clean
 # Uncomment the following line:
 
 bundle exec rails db:migrate
-
-bundle exec rails
