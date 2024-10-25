@@ -8,6 +8,7 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Install](#install)
   - [Usage](#usage)
@@ -48,6 +49,12 @@
 - **Previous Boards** View previous boards, either the last 10 or all of them.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+- [Link to live demo](https://minesweeper-cje4.onrender.com/)
+
 
 <!-- GETTING STARTED -->
 
