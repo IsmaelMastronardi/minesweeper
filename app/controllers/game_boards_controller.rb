@@ -2,13 +2,13 @@ class GameBoardsController < ApplicationController
   before_action :set_game_board, only: %i[ show edit update destroy ]
 
   def home
-    @game_boards = GameBoard.order(created_at: :desc).limit(10)
+    @game_boards = GameBoard.order(created_at: :desc).limit(10).paginate(page: params[:page], per_page: 10)
     @game_board = GameBoard.new
   end
 
   # GET /game_boards or /game_boards.json
   def index
-    @game_boards = GameBoard.all
+    @game_boards = GameBoard.all.paginate(page: params[:page], per_page: 10)
   end
 
   # GET /game_boards/1 or /game_boards/1.json
@@ -89,16 +89,37 @@ class GameBoardsController < ApplicationController
       board = []
     
       (height * width).times do
-        board.push({ bomb: false, revealed: false })
+        board.push({ bomb: false, revealed: false, attached_bombs: 0 })
       end
     
       bomb_locations = [*0..((width * height) - 1)].sample(bomb_amount)
       bomb_locations.each do |loc|
         board[loc]['bomb'] = true
+        update_squares(board, loc, width, height)
       end
     
       board  = board.each_slice(height).to_a
       return board
+    end
+
+    def update_squares(board, loc, width, height)
+      actual_row = loc / width
+      actual_col = loc % width
+      positions = [-1, 0, 1]
+    
+      positions.each do |row_dir|
+        row = actual_row + row_dir
+        positions.each do |col_dir|
+          col = actual_col + col_dir          
+          if (row != actual_row || col != actual_col) && 
+             (row >= 0 && row < height) && 
+             (col >= 0 && col < width)
+            
+            index = row * width + col
+            board[index][:attached_bombs] += 1
+          end
+        end
+      end
     end
 
 end

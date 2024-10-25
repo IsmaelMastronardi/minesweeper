@@ -18,16 +18,24 @@
     %b Email:
     = @game_board.email
 
+  %div#game_over.hidden.alert You Lost!.
+
   %div.gameContainer
     %div.gameTable
       - @game_board.board.each do |row|
         %div.boardRow
           - row.each do |cell|
-            %div.boardSquare
-              - if cell["bomb"]
-                %span 💣
-              - else
-                %span ⬜
+            %div.boardSquare.borderedSquare{ 
+            data: { bomb: cell["bomb"] ? 'true' : 'false', attached_bombs: cell["attached_bombs"], revealed: cell["revealed"] }, 
+            class: (cell["revealed"] ? "revealed" : "") 
+          }
+              %span ⬜
+
+  %div.button_holder
+    %button#reset_btn.btn.btn-warning Reset
+    %button#show_btn.btn.btn-success Show All
 
 
   = link_to 'Back to Home page', root_path, class: 'btn btn-primary mt-3'
+
+= javascript_include_tag 'game_board'
