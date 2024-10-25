@@ -84,3 +84,4 @@ production:
   database: minesweeper_production
   username: minesweeper
   password: <%= ENV["MINESWEEPER_DATABASE_PASSWORD"] %>
+  host: <%= ENV['DATABASE_HOST'] %>
