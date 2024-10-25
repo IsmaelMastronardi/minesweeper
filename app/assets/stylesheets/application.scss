@@ -81,7 +81,10 @@ em {
   color: white;
 }
 
-#reset_btn {
-  display: block;
+.button_holder {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1rem 0;
 }
 
