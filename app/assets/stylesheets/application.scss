@@ -1,0 +1,90 @@
+@import "bootstrap";
+
+
+.gameContainer {
+  display: flex;
+  justify-content: safe center;
+  overflow-x: auto;
+}
+
+.gameTable {
+  display: flex;
+}
+
+.boardRow {
+
+}
+
+.boardSquare {
+  min-width: 3rem;
+  text-align: center;
+}
+
+.boardSquare > span {
+  font-size: 2rem;
+}
+
+.borderedSquare {
+  border: 1px solid black;
+}
+
+.navigation {
+  padding-bottom: 1rem;
+}
+
+.navigation > span,
+.navigation > em,
+.navigation > a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+em {
+  color: #0d6efd !important;
+}
+
+
+.bomb-1 {
+  color: blue;
+}
+
+.bomb-2 {
+  color: green;
+}
+
+.bomb-3 {
+  color: lightgreen;
+}
+
+.bomb-4 {
+  color: #cfcf89;
+}
+
+.bomb-5 {
+  color: orange;
+}
+
+.bomb-6 {
+  color: red;
+}
+
+.bomb-7 {
+  color: darkred;
+}
+
+.bomb-8 {
+  color: purple;
+}
+
+.hidden {
+  color: white;
+}
+
+.button_holder {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+}
+
