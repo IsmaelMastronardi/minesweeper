@@ -1,6 +1,5 @@
 
 function initializeGame(){
-  console.log('asdsa')
   const squares = document.querySelectorAll('.boardSquare');
   const resetBtn = document.getElementById('reset_btn');
   const showBtn = document.getElementById('show_btn');
