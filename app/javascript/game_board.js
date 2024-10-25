@@ -1,4 +1,6 @@
-document.addEventListener('turbo:load', () => {
+
+function initializeGame(){
+  console.log('asdsa')
   const squares = document.querySelectorAll('.boardSquare');
   const resetBtn = document.getElementById('reset_btn');
   const showBtn = document.getElementById('show_btn');
@@ -50,4 +52,5 @@ document.addEventListener('turbo:load', () => {
       changeDisplayedValue(square)
     })
   });
-});
+}
+document.addEventListener("turbo:load", initializeGame);
