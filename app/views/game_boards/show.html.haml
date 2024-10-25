@@ -18,6 +18,8 @@
     %b Email:
     = @game_board.email
 
+  %div#game_over.hidden.alert You Lost!.
+
   %div.gameContainer
     %div.gameTable
       - @game_board.board.each do |row|
@@ -29,5 +31,6 @@
           }
               %span ⬜
 
+  %button#reset_btn.btn.btn-warning Reset
 
   = link_to 'Back to Home page', root_path, class: 'btn btn-primary mt-3'
